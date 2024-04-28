@@ -56,9 +56,5 @@ contract HelloWorld{
 
 编写完成的合约，还需要进行编译成机器能够执行的二进制文件；
 
-![image text](https://www.baidu.com)
 
-```
-
-```
 ![](images/2024-04-28-20-07-59.png)
