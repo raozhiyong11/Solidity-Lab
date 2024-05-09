@@ -58,5 +58,29 @@ contract FunctionContract{
 
 
 
+    //return : 返回多个变量
+    function returnMutiVarFun() public pure returns(string memory _name,bool _flag,uint _age){
+        return ('51bit',true,18);
+    }
+
+    //return : 命名式返回多个变量，不需要 return
+    function returnMutiVarNoReturnFun() public pure returns(string memory _name,bool _flag,uint _age){
+        _name = 'bit15';
+        _flag = false;
+        _age = 18;
+    }
+
+
+    //return : 解构式赋值，支持读取函数的全部或部分返回值。读取所有返回值：声明变量，并且将要赋值的变量用,隔开，按顺序排列。
+    function returnMutiVarFromFun() public pure returns(string memory _name,bool _flag,uint _age){
+        (_name,_flag,_age) = returnMutiVarNoReturnFun();
+    }
+
+    //return : 解构式赋值，支持读取函数的全部或部分返回值。读取部分返回值：声明要读取的返回值对应的变量，不读取的留空。
+    function returnMutiVarFromFun2() public pure returns(string memory _name,uint _age){
+        (_name,,_age) = returnMutiVarNoReturnFun();
+    }
+
+
 
 }
