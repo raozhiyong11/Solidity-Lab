@@ -2,7 +2,7 @@
 //pragma solidity 0.8.7;
 pragma solidity >=0.6.0 <0.9.0;
 
-contract SimpleStorge{
+contract VariableSimpleStorge{
 
     //1.布尔
     bool isCommit = true;
@@ -66,7 +66,7 @@ contract SimpleStorge{
 contract ExternalContract{
     int32 public extCommitCount;
 
-    function incrCommitCount(SimpleStorge _simpleStorge) public  returns (int32 _cmmitCount) {
+    function incrCommitCount(VariableSimpleStorge _simpleStorge) public  returns (int32 _cmmitCount) {
         //外部和合约调用SimpleStorge的incrCommitCount函数，incrCommitCount函数被public/external 修饰时，编译通过，private提示函数不可见
         extCommitCount = _simpleStorge.incrCommitCount();
         return extCommitCount;
@@ -77,7 +77,7 @@ contract ExternalContract{
 /**
     派生合约
  */ 
-contract SonSimpleStorge is SimpleStorge{
+contract SonSimpleStorge is VariableSimpleStorge{
     // 当 SimpleStorge 合约中的 commitTotal 被public\internal 修饰时 编译通过，private 编译提示：未定义
     uint256 public sonCommitTotal = commitTotal;
 
