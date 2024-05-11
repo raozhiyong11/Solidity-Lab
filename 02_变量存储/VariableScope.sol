@@ -14,7 +14,7 @@ contract VariableScope{
     function changeValues() public {
         count = 100;
         status = "xxx";
-        str = "0x51bit";
+        str = "0x51bit"; 
     }
     
     //2、局部变量（local variable）,在函数执行过程中有效的变量，函数执行完退出后无效，在内存存储，不上链，gas fee低；
