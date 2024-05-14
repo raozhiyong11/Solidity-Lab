@@ -75,12 +75,5 @@ contract ArrayType{
     }
 
 
-        
-
-    
-
-    
-
-
 
 }
