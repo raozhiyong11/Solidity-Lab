@@ -68,10 +68,10 @@ contract LogicControl{
     
         return _res;
     }
-    
     //三元运算符
+    
     function ternaryOperatorFun(uint _number) public pure returns(string memory _res){
-        _res = _number >= 100 ?  "You didn't win." : "Congratulations, you won!";
+        _res = _number >= 100 
         return _res;
     }
 }
