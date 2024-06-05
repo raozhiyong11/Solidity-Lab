@@ -6,15 +6,13 @@ contract ConstructorExtends{
 
 }
 
-
 contract Grandfather{
     string public name;
     int public age;
 
-    //校验年龄，必须在0 和 150之间
-    modifier checkAge(int _age){
-        require(_age>=0 && _age <= 150,"age must gt 0 and lt 150 ");
-        _;
+    constructor(string memory _name,int _age){
+        name = _name;
+        age = _age;
     }
 
     //使用 virtual 声明此函数可以被重写
@@ -24,16 +22,24 @@ contract Grandfather{
 
 }
 
+//构造函数继承：直接传值
+contract Uncle is Grandfather("Tom",68){
+    //使用 super调用 父合约的函数
+    function getFatherFavorite() public pure returns (string memory _fatherFavorite){
+        _fatherFavorite = super.getFavorite();
+    }
+}
 
+//构造函数继承：传入输入值
 contract Father is Grandfather{
-    //使用 override 表示覆盖父合约中的 函数
-    function getFavorite() public override  pure  returns(string memory _favorite){
-        _favorite = "play basketball";
+    constructor(string memory _name,int _age) Grandfather(_name,_age){
+
     }
 
-    //设置年龄，使用了grandfather合约中的modifier校验合法性
-    function setAge(int _age) public checkAge(_age){
-        age = _age;
+    //使用 父合约名称 调用 父合约的函数
+    function getFatherFavorite() public pure returns (string memory _fatherFavorite){
+        _fatherFavorite = Grandfather.getFavorite();
     }
+
 
 }
