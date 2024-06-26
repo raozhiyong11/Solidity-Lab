@@ -4,7 +4,7 @@ pragma solidity ^0.8.7;
 /*
     被调用目标合约
 */
-contract CalledContract{
+contract Bob{
 
     uint256 public count = 0;
 
