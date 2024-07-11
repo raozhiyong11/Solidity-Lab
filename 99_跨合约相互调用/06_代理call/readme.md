@@ -1,4 +1,4 @@
-## 1. delegatecall 和 call 对比
+## delegatecall 和 call 对比
 ### a. call 的工作方式
 ![](images/2024-06-26-09-09-31.png)
 当外部调用者 A 通过合约 B ，使用 call 方式调用合约 C 的函数时，将会执行合约 C 的函数代码，该函数所处的上下文 `Context` 是合约 C 的上下文。
