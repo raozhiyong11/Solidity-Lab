@@ -6,7 +6,7 @@
 npm install @remix-project/remixd
 ```
 
-查看版本
+查看版本 
 ```bash
 remixd -v
 ```
